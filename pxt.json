@@ -8,6 +8,9 @@
     "files": [
         "README.md",
         "skillmap.md",
+        "backgrounds/README.md",
+        "backgrounds/beginner-gamedev.md",
+        "backgrounds/space-explorer.md",
         "tutorials/interface/activity1.md",
         "tutorials/platformer/activity1.md",
         "tutorials/platformer/activity2.md",
