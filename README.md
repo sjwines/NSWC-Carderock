@@ -17,6 +17,8 @@ map itself can be found under the top-level heading:
 - `name`: The title of your skill map. This will be displayed in the banner on the page.
 - `description`: A description of the map contents. This is also shown in the banner.
 - `infoUrl` (optional): A URL to a page with additional educator information
+- `backgroundurl` (optional): URL to a background image for the entire skill map
+- `bannerurl` (optional): URL to a banner image displayed in the sidebar panel
 
 ### Learning Paths
 
@@ -42,6 +44,60 @@ an "activity" is simply a MakeCode tutorial, and has the following properties:
 - `tags`: Descriptive tags displayed on the bottom of the activity card.
 - `url`: Link to the tutorial. See the [MakeCode Tutorial Documentation](https://makecode.com/writing-docs/user-tutorials) for details on tutorial authoring and link formatting.
 - `imageUrl`: URL for the image displayed on the front of the activity card.
+
+## Background Images and Pages
+
+This repository supports two types of background content for skill maps:
+
+### Background Images
+Background images provide visual theming for your skill maps. Place image files (PNG, JPG, GIF) in the `/img/backgrounds/` directory:
+
+```
+/img/backgrounds/
+├── space/
+│   ├── space-background.png
+│   └── space-banner.png
+├── platformer/
+│   └── platformer-bg.jpg
+└── general/
+    └── coding-background.png
+```
+
+Reference them in your skill map using:
+```markdown
+# my-skillmap
+* backgroundurl: /img/backgrounds/space/space-background.png
+* bannerurl: /img/backgrounds/space/space-banner.png
+```
+
+**Image Guidelines:**
+- **Background images**: Should be subtle/low contrast (1920x1080px recommended)
+- **Banner images**: Can be more detailed (400x200px recommended)  
+- **File size**: Keep under 500KB for good performance
+- **Accessibility**: Ensure skill map nodes remain visible over background
+
+### Background Pages
+Background pages are markdown files that provide educational context. Place them in the `/backgrounds/` directory:
+
+```
+/backgrounds/
+├── space-explorer.md
+├── beginner-gamedev.md
+└── README.md
+```
+
+These are separate from background images and are used for additional educational content that can be referenced from skill maps.
+
+### Example Usage
+```markdown
+# space-explorer
+* name: Space Explorer Journey
+* description: Build amazing space games!
+* backgroundurl: /img/backgrounds/space/nebula-background.png
+* bannerurl: /img/backgrounds/space/spacecraft-banner.png
+* primarycolor: #2EA9B0
+* secondarycolor: #F392BD
+```
 
 ## Forking
 
